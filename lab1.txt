@@ -26,7 +26,7 @@ curl -i -X POST -d "X=Y" https://webdocs.cs.ualberta.ca/~hindle1/1.py
 Request method is POST
 
 def download_file(url):
-    local_filename = url.split('/')[-1]
+    local_filename = url.split('/')[-1]+"download"
     # NOTE the stream=True parameter below
     with requests.get(url, stream=True) as r:
         r.raise_for_status()
@@ -36,10 +36,7 @@ def download_file(url):
                 # and set chunk_size parameter to None.
                 #if chunk: 
                 f.write(chunk)
-    r.close()
     return local_filename
-
-citing:Roman Podlinov https://stackoverflow.com/questions/16694907/download-large-file-in-python-with-requests
 
 Question 8
 
