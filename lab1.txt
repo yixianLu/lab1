@@ -1,43 +1,34 @@
 Question 1
 https://github.com/yixianLu
 Question 2
-python -c "import requests; print(requests.__version__)"
 2.25.1
 Question 3
 2.25.1
 Question 4
-No difference?
-Question 5 (Baidu)
-301
+My python version of the virtual and non-virtual environment is the same so I got the same requests version.
+Question 5
+status code:301 correct url: https://www.google.com/
 Question 6
-418 301
-It returned (418) I'm a Teapot
 
-modified python script
-import requests
-r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
-print r
-python -c "import requests; r = requests.get('http://google.com'); print(r)"
+for http://google.com/teapot
+status code: 301
+command: curl -i
+
+http://www.google.com/teapot
+status code: 418
+It returned (418) I'm a Teapot
 
 Question 7
 curl -i https://webdocs.cs.ualberta.ca/~hindle1/1.py
-Request method is GET
+Request method in the output is GET
 curl -i -X POST -d "X=Y" https://webdocs.cs.ualberta.ca/~hindle1/1.py
-Request method is POST
+Request method in the output is POST
+Contains one more feature: content length
 
-def download_file(url):
-    local_filename = url.split('/')[-1]+"download"
-    # NOTE the stream=True parameter below
-    with requests.get(url, stream=True) as r:
-        r.raise_for_status()
-        with open(local_filename, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192): 
-                # If you have chunk encoded response uncomment if
-                # and set chunk_size parameter to None.
-                #if chunk: 
-                f.write(chunk)
-    return local_filename
+Remote Port of the two is different
+
 
 Question 8
+https://raw.githubusercontent.com/yixianLu/lab1/main/script.py
 
 
