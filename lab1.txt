@@ -23,9 +23,11 @@ curl -i https://webdocs.cs.ualberta.ca/~hindle1/1.py
 Request method in the output is GET
 curl -i -X POST -d "X=Y" https://webdocs.cs.ualberta.ca/~hindle1/1.py
 Request method in the output is POST
-Contains one more feature: content length
+Contains several more feature: content length, content type
 
-Remote Port of the two is different
+Remote Port and unique id of the two is different
+
+x-post gives a http post request, which is used to update the server.
 
 
 Question 8
